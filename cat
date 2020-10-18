@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#cat, display the contents of a file.
+
+import os, sys
+
+def CAT():
+	try:
+		target = sys.argv[1]
+		if os.path.isdir(target) == True:
+			print("This is a directory. Please specify a file to cat");
+		else:
+			readfile = open(target, 'r')
+			print(readfile.read())	
+	except IndexError:
+		print("No file specified")
+CAT()

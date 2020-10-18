@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+#last updated: january 18 2020
+#written by moxniso
+#mkdir, command for making a directory
+
+import os, sys
+
+def MKDIR():
+	try:
+		newdir = sys.argv[1]
+		if os.path.isdir(newdir):
+			print("A directory by this name already exists here.")
+			return
+		else:
+			os.makedirs(newdir)
+			os.chdir(newdir)
+	except IndexError:
+		print("No name specified.")
+		return
+MKDIR()		

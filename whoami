@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#whoami, print the name user currently using the shell to stdout.
+
+import getpass #because os.getuid doesn't work on windows
+
+print(getpass.getuser())

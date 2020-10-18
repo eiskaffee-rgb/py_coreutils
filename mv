@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+#last updated: janurary 13 2020
+#written by moxniso
+#mv, move or rename a file or directory.
+
+import os, sys
+
+def MV():
+	try:
+		original = sys.argv[1]
+		new = sys.argv[2]
+		if not os.path.isdir(original) or not os.path.isdir(new):
+			print("That file/directory doesn't exist.")
+		else:
+                    if sys.platform == "win32":
+                        if new.endswith('\\'):
+                            os.replace(original, (new + original))
+                        else:
+                            os.rename(original, new) #mv is what unix uses for renaming 
+                    else:
+                         if new.endswith('/'):
+                            os.rename(original, (new + original))
+                         else:
+                            os.rename(original, new) 
+
+	except IndexError:
+		print("Not enough parameters.")
+MV()

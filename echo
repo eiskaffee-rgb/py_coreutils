@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#echo, print a string to stdout.
+
+import sys
+
+def ECHO():
+	try:
+                echoed = str(sys.argv[1])
+                print(echoed)
+	
+        except IndexError:
+		return
+ECHO()

@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#rmdir, the command for removing a directory
+
+import os, sys, shutil
+
+def RMDIR():
+        try:
+                target = sys.argv[1]
+                if os.path.isfile(target) == True:
+                    print("This is a file,not a directory. Use rm to delete files.")
+                    return
+                else:
+                    warning = input("Are you sure? (y or n): ")
+                    if warning == 'y':
+                        shutil.rmtree(target)
+                    else:
+                        return
+        except IndexError:
+            print("No directory was specified.")
+RMDIR()
+			

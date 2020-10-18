@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#rm, the command for removing a file.
+
+import os, sys, shutil
+
+def RM():
+    try:
+        target = sys.argv[1]
+        if os.path.isdir(target) == True:
+            print("That's a directory\nUse rmdir for deleting directories (Be careful!)")
+            return
+        elif os.path.isfile(target) == False:
+            print("No such file exists.")
+            return
+        else:
+            os.remove(target)
+    except IndexError:
+        print("No file specified.")
+RM()

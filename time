@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+#last updated: january 13 2020
+#written by moxniso
+#time, print the current local time and day
+
+import time
+import datetime
+
+localtime = time.asctime(time.localtime(time.time()))
+print(localtime)
+
